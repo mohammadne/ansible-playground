@@ -1,0 +1,14 @@
+- name: 
+  hosts: webservers
+  become: yes
+  vars:
+    http_port: 8000
+    https_port: 4443
+    html_welcome_message: "Hello World"
+
+  tasks:
+  - import_tasks: tasks/requirements.yaml
+  - import_tasks: tasks/install_apache2.yaml
+
+  handlers:
+  - import_tasks: handlers/restart_apache2.yaml
