@@ -1,0 +1,10 @@
+- name: nginx
+  hosts: webservers
+  become: yes
+  vars_files: vars/main.yaml
+  tasks:
+  - import_tasks: tasks/install.yaml
+  - import_tasks: tasks/config.yaml
+  handlers:
+  - import_tasks: handlers/reload.yaml
+  - import_tasks: handlers/restart.yaml
