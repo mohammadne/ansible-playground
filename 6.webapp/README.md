@@ -9,7 +9,7 @@
 ansible -i inventory.ini --ask-vault-pass -m debug -a 'var=hostvars[inventory_hostname]' webapp
 
 # list all the tags
-ansible-playbook -i inventory.ini --ask-vault-pass -K playbook.yml --list-tags
+ansible-playbook -i inventory.ini playbook.yml --list-tags
 
 # run the playbook skip php tags
 ansible-playbook -i inventory.ini --ask-vault-pass -K playbook.yml --skip-tags "php"
