@@ -1,9 +1,6 @@
 # Apache2
 
 ``` bash
-# place ansible-playground into ~/.ssh/config
-vim ~/.ssh/config
-
 # ping the hosts
 ansible webservers -i inventory.ini -m ping # webservers's hosts
 ansible all -i inventory.ini -m ping # all the hosts
